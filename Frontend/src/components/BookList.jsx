@@ -8,7 +8,9 @@ const BookList = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("http://localhost:3000/books"); // API call
+        const response = await fetch(
+          "https://machine-test-psi.vercel.app/books"
+        ); // API call
         if (!response.ok) {
           throw new Error("Failed to fetch books");
         }
@@ -25,9 +27,12 @@ const BookList = () => {
   // Delete a book
   const deleteBook = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/books/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `https://machine-test-psi.vercel.app/books/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to delete the book");
       }
